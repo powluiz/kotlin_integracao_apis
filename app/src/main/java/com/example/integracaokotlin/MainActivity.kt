@@ -54,7 +54,13 @@ class MainActivity : AppCompatActivity() {
                 binding.swipeRefreshLayout.isRefreshing = false // finaliza o estado de loading
                 when (result) {
                     is Result.Success -> {
-                        val adapter = ItemAdapter(result.data)
+                        val adapter = ItemAdapter(result.data, itemClickListener = { item ->
+                            startActivity(ItemDetailActivity.newIntent(
+                                context = this@MainActivity,
+                                itemId = item.id
+                            ))
+                        })
+
                         binding.recyclerView.adapter = adapter
                     }
                     is Result.Error -> {
