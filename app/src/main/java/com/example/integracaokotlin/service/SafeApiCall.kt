@@ -1,3 +1,5 @@
+package com.example.integracaokotlin.service
+
 import retrofit2.HttpException
 
 sealed class Result<out T> {

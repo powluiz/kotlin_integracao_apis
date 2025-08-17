@@ -1,6 +1,6 @@
 package com.example.integracaokotlin.model
 
-data class Location (
+data class ItemLocation (
     val latitude: Double,
     val longitude: Double,
     val name: String,
@@ -13,7 +13,7 @@ data class ItemValue (
     val profession: String,
     val imageUrl: String,
     val age: Int,
-    val location: Location,
+    val location: ItemLocation,
 )
 
 data class Item (
